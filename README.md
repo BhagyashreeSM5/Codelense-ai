@@ -72,6 +72,7 @@ GEMINI_API_KEY=your_gemini_api_key
 
 ## 👩‍💻 Author
 
-Bhagyashree — Computer Science Student
+Bhagyashree  Myageri
+Computer Science Student
 ```
 
