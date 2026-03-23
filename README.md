@@ -62,7 +62,7 @@ GEMINI_API_KEY=your_gemini_api_key
 
 *Coming soon*
 
-## 🧪 RAG Implementation Details
+## RAG Implementation Details
 
 - **Chunking strategy:** 50-line overlapping chunks per file
 - **Embedding model:** ChromaDB built-in (all-MiniLM-L6-v2)
