@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { chatWithCode } from "../api";
+import { sendChat } from "../api";
 
 function ChatPanel({ codebaseId }) {
   const [messages, setMessages] = useState([
@@ -21,11 +21,10 @@ function ChatPanel({ codebaseId }) {
     setLoading(true);
 
     try {
-      // 🧠 Send question + chat history so Gemini has context
-      const response = await chatWithCode(
+      const response = await sendChat(
         codebaseId,
         input,
-        newMessages.slice(-6) // last 6 messages
+        newMessages.slice(-6)
       );
       setMessages([
         ...newMessages,
@@ -49,7 +48,6 @@ function ChatPanel({ codebaseId }) {
       height: "100%", background: "#1a1a2e",
       borderRadius: "12px", overflow: "hidden"
     }}>
-      {/* Header */}
       <div style={{
         padding: "14px 16px",
         borderBottom: "1px solid #2a2a4a",
@@ -59,7 +57,6 @@ function ChatPanel({ codebaseId }) {
         🤖 AI Code Chat
       </div>
 
-      {/* Messages */}
       <div style={{
         flex: 1, overflowY: "auto",
         padding: "16px", display: "flex",
@@ -90,7 +87,6 @@ function ChatPanel({ codebaseId }) {
         )}
       </div>
 
-      {/* Input */}
       <div style={{
         padding: "12px", borderTop: "1px solid #2a2a4a",
         display: "flex", gap: "8px"
